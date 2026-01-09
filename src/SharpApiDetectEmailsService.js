@@ -5,6 +5,15 @@ const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi
  */
 class SharpApiDetectEmailsService extends SharpApiCoreService {
   /**
+   * Creates a new SharpApiDetectEmailsService instance
+   * @param {string} apiKey - Your SharpAPI API key
+   * @param {string} [apiBaseUrl='https://sharpapi.com/api/v1'] - API base URL
+   */
+  constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
+    super(apiKey, apiBaseUrl, '@sharpapi/sharpapi-node-detect-emails/1.0.1');
+  }
+
+  /**
    * Parses the provided text for any possible emails. Might come in handy in case of processing and validating
    * big chunks of data against email addresses or f.e. if you want to detect emails in places
    * where they're not supposed to be.
